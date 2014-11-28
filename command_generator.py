@@ -7,13 +7,14 @@ CITIES = [
 ]
 
 command_str ="""
-/Users/leonsas/projects/temp/capturejs/capture.js --uri http://en.wikipedia.org/wiki/%s \
-            --viewportsize 9000x1400 \
+~/Documents/Northwestern/Clases/Senior/Fall/DSGN\ 395/capturejs/capture.js --uri http://en.wikipedia.org/wiki/%s \
+            --viewportsize 9000x1000 \
             --zoomfactor 3 \
-            --javascript-file /Users/leonsas/Dropbox/FALL2014/DSGN395/WikiLinks/injector.js \
-            --output '%s/%s.png'
-
+            --javascript-file ~/Documents/Northwestern/Clases/Senior/Fall/DSGN\ 395/wikiLinks/'injector%s.js' \
+            --output ~/Dropbox/DSGN395/prints/'%s_%s.png'
 """
 
+
 for endpoint, name in CITIES:
-  print command_str % (endpoint, name, name)
+	for injector in ['1','2']:
+	  print command_str % (endpoint, injector, name, injector)
